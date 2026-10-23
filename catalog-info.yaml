@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: orders
+  title: orders
+  description: Order Application
+  annotations:
+    backstage.io/kubernetes-id: orders
+    contract-first-idp.github.io/scm-provider: github
+    contract-first-idp.github.io/scm-host: github.com
+    contract-first-idp.github.io/domain-org: contract-first-kafka
+    contract-first-idp.github.io/domain-repo: demo-domain
+    contract-first-idp.github.io/repository-name: flight-meals-orders-service
+    contract-first-idp.github.io/implementation-profile: quarkus-camel-openapi
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/domain-maintainers
+  system: system:default/flight-meals
+  providesApis:
+    - api:default/meal-selection
